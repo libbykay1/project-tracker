@@ -1,0 +1,99 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: var(--secondary);
+  color: var(--accentTwo);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%; 
+  max-width: 500px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box; 
+}
+
+.modal-header {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #ff4136;
+  cursor: pointer;
+}
+
+.modal-body {
+  margin-top: 2rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  color:white;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--accentTwo);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: var(--secondary);
+}
+
+.submit-button {
+  margin: 32px;
+  width: 100%;
+  background-color: var(--accentOne); 
+  font-size: larger;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: center;
+}
+
+/* Adjustments for small screens */
+@media (max-width: 480px) {
+  .modal {
+    padding: 1rem;
+    width: calc(100% - 2rem); 
+  }
+
+  .modal-header h1 {
+    font-size: 1.5rem; 
+  }
+
+  .modal-body {
+    width: calc(100% - 2rem); 
+  }
+
+  input,
+  textarea {
+    font-size: 1rem; 
+  }
+
+  .submit-button {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+}

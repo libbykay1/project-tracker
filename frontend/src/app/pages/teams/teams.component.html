@@ -1,0 +1,41 @@
+<div class="teams-container">
+  <h1 class="teams-title">Teams</h1>
+  <div class="teams-grid">
+
+    <div *ngFor="let team of teams" (click)="navigateToProjects(team.id, team.name)">
+       <!-- Team Card -->
+      
+      <div class="team-card" >
+        <div class="header">
+          <h2>{{team.name}}</h2>
+          <p># of Projects: {{team.numberOfProjects}}</p>
+        </div>
+        <div class="members">
+          <p>Members</p>
+          <div class="members-container">
+            <div *ngFor="let member of team.teammates">
+              <div class="member">{{ member.profile.firstName }} {{ member.profile.lastName }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- -------------------- -->
+    </div>
+
+    <!-- New Team Card -->
+    <div class="team-card" *ngIf="isAdmin()" (click)="openModal()">
+      <button class="new-team-button">
+        <span class="plus-icon">+</span>
+        <p>New Team</p>
+      </button>
+    </div>
+  </div>
+
+  <app-create-team-modal
+  *ngIf="showModal"
+  (close)="closeModal()"
+
+  (submitTeam)="handleTeamSubmission($event)" 
+></app-create-team-modal>
+
+</div>

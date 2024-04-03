@@ -1,0 +1,69 @@
+.select-company-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin-top: 14rem;
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.dropdown-container {
+  position: relative;
+  width: 20%;
+}
+
+select {
+  text-align: center;
+  height: 85px;
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  border-radius: 25px;
+  background-color: white;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 48px;
+  border: 2px solid lightgrey;
+  color: #5533ff;
+  position: relative;
+}
+
+/* Media queries for tablet screens */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  select {
+    height: 65px;
+    font-size: 1rem;
+  }
+
+  .dropdown-container {
+    width: 40%;
+  }
+}
+
+/* Media queries for mobile screens */
+@media (max-width: 480px) {
+  .select-company-container {
+    margin-top: 3rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  select {
+    height: 55px;
+    font-size: 1.25rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .dropdown-container {
+    width: 60%;
+  }
+}

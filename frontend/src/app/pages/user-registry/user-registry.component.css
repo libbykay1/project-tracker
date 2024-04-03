@@ -1,0 +1,106 @@
+.user-registry-container {
+    width: 60%; 
+    margin: auto;
+    text-align: center;
+    background-color: var(--primary);
+    padding: 1em; 
+    border-radius: 10px;
+    color: var(--accentTwo);
+  }
+  
+  h1 {
+    margin-bottom: 0.5em;
+    color: var(--accentOne);
+    font-size: 36px; 
+  }
+  .error-message{
+    color:red;
+  }
+  
+  p {
+    color: var(--accentOne);
+    font-size: 1rem; 
+  }
+  
+  table {
+    width: 100%;
+    margin-top: 2em; 
+    border-collapse: collapse;
+    border: 2px solid var(--accentTwo);
+  }
+  
+  th,
+  td {
+    padding: 1em;
+    text-align: center;
+  }
+  
+  th {
+    border-bottom: 2px solid var(--accentTwo);
+    font-size: large;
+    color: white;
+  }
+  
+  tr {
+    border-bottom: 1px solid var(--accentTwo);
+  }
+  
+  .text-green {
+    color: green;
+  }
+  
+  .text-red {
+    color: red;
+  }
+  
+  button {
+    background-color: #1abc9c;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    margin-top: 3em;
+    cursor: pointer;
+    font-size: larger;
+  }
+  
+  button:hover {
+    background-color: #16a085;
+  }
+  
+
+  @media (max-width: 768px) {
+    .user-registry-container {
+      width: 95%;
+    }
+  
+    h1 {
+      font-size: 30px;
+    }
+  
+    th, td {
+      padding: 0.5em;
+    }
+  
+    p, button {
+      font-size: 0.875rem;
+    }
+  }
+  
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 24px;
+    }
+  
+    table {
+      display: block;
+      overflow-x: auto; 
+    }
+  
+    th, td {
+      white-space: nowrap;
+      padding: 0.5em;
+    }
+  }
+  

@@ -1,0 +1,11 @@
+<div class="select-company-container">
+  <h1>Select Company</h1>
+  <div class="dropdown-container">
+      <!-- TO DO: add arrow and toggle -->
+       <select class="styled-select" (change)="onCompanySelected($event)">
+        <option value="" disabled selected>Pick an option</option>
+
+      <option *ngFor="let company of companies" [value]="company.id">{{ company.name }}</option>
+    </select>
+  </div>
+</div>

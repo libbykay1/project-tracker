@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
+
+:root {
+  --primary: #051622;
+  --secondary: #0b2d45;
+  --accentOne: #1ba098;
+  --accentTwo: #deb992;
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+  background-color: var(--primary);
+  margin: 0;
+  color: var(--accentOne);
+}

@@ -1,0 +1,179 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+#form {
+  width: 80%;
+}
+.names,
+.passwords {
+  display: flex;
+  justify-content: space-between;
+  width: 97%;
+}
+
+.passwords {
+  margin-top: 12px;
+  margin-bottom: 35px;
+}
+.match-error-message {
+  text-align: center;
+  color: red;
+}
+
+.names {
+  margin-bottom: 8px;
+}
+
+.g {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}
+
+.error-message {
+  color: red;
+  font-size: small;
+  margin-top: 2px;
+  display: flex;
+  text-align: start;
+}
+
+.modal {
+  background-color: var(--secondary);
+  color: var(--accentTwo);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.modal-header {
+  width: 100%;
+  text-align: center;
+}
+.close-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-button {
+  border: 3px solid #f24e1e;
+  color: #f24e1e;
+  height: 35px;
+  width: 35px;
+  font-size: large;
+  border-radius: 50%;
+  margin-left: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input::placeholder {
+  color: var(--accentTwo);
+}
+
+.f {
+  width: 45%;
+}
+
+#email,
+#phone {
+  width: 97%;
+}
+.modal-body {
+  margin-top: 1em;
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  color: white;
+
+  border-bottom: 1px solid var(--accentTwo);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: var(--secondary);
+}
+
+#admin-title {
+  font-size: x-large;
+  margin-top: 20px;
+}
+
+.submit-button {
+  width: 30%;
+  background-color: var(--accentOne);
+  font-size: larger;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 20px;
+}
+
+select {
+  text-align: center;
+  width: 40%;
+  margin: 25px;
+  padding: 0.5rem 0.5rem;
+  border-radius: 25px;
+  background-color: white;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 48px;
+  color: #5533ff;
+  position: relative;
+  margin-top: 25px;
+}
+
+#firstName,
+#password {
+  width: 100%;
+}
+
+/* Adjustments for small screens */
+@media (max-width: 480px) {
+  .modal {
+    padding: 1rem;
+    width: calc(100% - 2rem);
+  }
+
+  .modal-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .modal-body {
+    width: calc(100% - 2rem);
+  }
+
+  input,
+  textarea {
+    font-size: 1rem;
+  }
+
+  .submit-button {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+}

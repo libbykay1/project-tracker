@@ -1,0 +1,20 @@
+<a class="back" routerLink="/teams">&lt;Back</a>
+<div class="project-container">
+<div class="header">
+  <!-- TODO : FORMAT  -->
+  <div class="title">
+    <h1>Projects for {{teamName}}</h1>
+  </div>
+</div>  
+  <button class="new-project-btn" *ngIf="isAdmin()" (click)="openModal('create')">New</button>
+  <ul class="project-list">
+    <!-- Example announcement card (loop over announcments and display a card for each)-->
+    <li class="project-item">
+      <app-project-card [newProject]="newProject"></app-project-card>
+    </li>
+  </ul>
+  <app-create-project-modal 
+  *ngIf="showModal && modalType === 'create'" 
+  (projectSubmitted)="handleProjectSubmitted($event)"
+  (close)="closeModal()"></app-create-project-modal>
+</div>

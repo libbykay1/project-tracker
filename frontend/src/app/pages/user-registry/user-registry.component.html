@@ -1,0 +1,36 @@
+<div class="user-registry-container">
+  <h1>User Registry</h1>
+  <p>A general view of all your members in your organization</p>
+  <h3 class="error-message">{{this.errorMessage}}</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Active</th>
+        <th>Admin</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.profile.firstName }} {{ user.profile.lastName }}</td>
+        <td>{{ user.profile.email }}</td>
+        <td [ngClass]="{ 'text-green': user.active, 'text-red': !user.active }">
+          {{ user.active ? "YES" : "NO" }}
+        </td>
+        <td [ngClass]="{ 'text-green': user.admin, 'text-red': !user.admin }">
+          {{ user.admin ? "YES" : "NO" }}
+        </td>
+        <td>{{ user.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <app-add-user-modal
+    *ngIf="showModal"
+    (close)="closeModal()"
+    (createUser)="handleCreateUser($event)"
+  >
+  </app-add-user-modal>
+  <button (click)="openModal()">Add User</button>
+</div>

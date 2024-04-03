@@ -1,0 +1,142 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 64px;
+  margin-top: 4rem;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 48px;
+  margin-top: 0;
+  font-weight: 400;
+}
+
+.login-box {
+  padding: 3.5rem 10rem;
+  margin-top: 2rem;
+  border: 4px solid var(--accentTwo);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--accentOne);
+  box-shadow: 0 0 10px #cbcbcb;
+}
+.svg-container {
+  position: relative;
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 200px;
+  height: 200px;
+  background-color: #0d3a59;
+  border-radius: 50%;
+}
+
+.svg-container svg {
+  display: block;
+  margin: auto;
+}
+
+.inner-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 137px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+input {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 0.5rem;
+  background-color: var(--primary);
+  border-bottom: 1px solid white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 250px;
+  color: var(--accentOne);
+}
+
+input::placeholder {
+  color: var(--accentOne);
+}
+
+button {
+  margin: auto;
+  width: 50%;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-top: 4rem;
+  border: 2px solid var(--accentOne);
+  border-radius: 25px;
+  cursor: pointer;
+  display: block;
+  background-color: var(--accentOne); 
+}
+
+button:hover {
+  background-color: darken(var(--accentOne), 10%); 
+}
+
+button:disabled {
+  border-color: var(--primary); 
+  cursor: not-allowed; 
+}
+
+.error-message {
+  color:red;
+  text-align: center;
+}
+
+/* Media queries for phone screens */
+@media (max-width: 768px) {
+  .login-container h1 {
+    font-size: 48px; 
+    margin-top: 7rem; 
+    line-height: 1.2;
+  }
+
+  .login-container h2 {
+    font-size: 36px; 
+    line-height: 1.2;
+  }
+
+  .login-container .login-box {
+    padding: 1rem 2rem; 
+    margin-top: 2rem; 
+    border: 2px solid var(--accentTwo); 
+  }
+
+  .login-container .login-box .svg-container {
+    width: 150px; 
+    height: 150px; 
+  }
+
+  .login-container .login-box .inner-svg {
+    width: 100px; 
+  }
+
+  .login-container .login-box form .form-group input {
+    width: 200px; 
+  }
+
+  .login-container .login-box button {
+    width: 70%; 
+  }
+}

@@ -1,0 +1,81 @@
+<div class="modal-backdrop">
+  <div class="modal">
+    <div class="close-button-container">
+      <button class="close-button" (click)="closeModal()">X</button>
+    </div>
+    <div class="modal-header">
+      <h1>Create New Team</h1>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="teamForm" (ngSubmit)="submit()">
+        <label for="teamName">Team Name</label>
+        <input
+          type="text"
+          id="teamName"
+          name="teamName"
+          formControlName="teamName"
+        />
+
+        <div
+          *ngIf="teamForm.get('teamName')?.errors?.['required'] && teamForm.get('teamName')?.touched"
+          class="error-message"
+        >
+          Team Name is required
+        </div>
+
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          formControlName="description"
+        ></textarea>
+
+        <div
+          *ngIf="teamForm.get('description')?.errors?.['required'] && teamForm.get('description')?.touched"
+          class="error-message"
+        >
+          Description is required
+        </div>
+
+        <!-- Member selection area -->
+        <!-- Member selection area -->
+        <label id="member-title" for="members">Select Members</label>
+        <select
+          formControlName="selectedMember"
+          id="members"
+          (change)="addMember()"
+        >
+          <option value="" disabled selected>Pick an option</option>
+          <option *ngFor="let member of availableMembers" [ngValue]="member">
+            {{ member.profile.firstName }} {{ member.profile.lastName }}
+          </option>
+        </select>
+        <div
+          *ngIf="
+            teamForm.get('selectedMember')?.invalid &&
+            teamForm.get('selectedMember')?.touched
+          "
+          class="error-message"
+        >
+          Team Member is required
+        </div>
+        <div class="selected-members">
+          <div
+            *ngFor="let member of selectedMembers"
+            class="selected-member-container"
+          >
+            <span class="selected-member"
+              >{{ member.profile.firstName }}
+              {{ member.profile.lastName }}</span
+            >
+            <button class="delete-button" (click)="removeMember(member.id)">
+              X
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-button">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="announcements-container">
+  <div class="header">
+    <div class="title">
+      <h1>Announcements</h1>
+    </div>
+    <button class="new-announcement-btn" *ngIf="isAdmin()" (click)="openModal()">New</button>
+  </div>
+
+  <ul class="announcement-list">
+    <!-- Example announcement card (loop over announcments and display a card for each)-->
+    <div *ngIf="isAdmin(); else elseBlock">
+      <li class="announcement-item" *ngFor="let announcement of announcements">
+        <div class="announcement-header">
+          <h2>{{ announcement.author.profile.firstName }}</h2>
+          <span class="announcement-date">{{ announcement.date | date: 'MMM d, y' }}</span>
+        </div>
+        <p class="announcement-message">
+          {{ announcement.message }}
+        </p>
+      </li>
+    </div>
+    <ng-template #elseBlock>
+      <li class="announcement-item" *ngFor="let announcement of userAnnoucements">
+        <div class="announcement-header">
+          <h2>{{ announcement.author.profile.firstName }}</h2>
+          <span class="announcement-date">{{ announcement.date | date: 'MMM d, y' }}</span>
+        </div>
+        <p class="announcement-message">
+          {{ announcement.message }}
+        </p>
+      </li>
+    </ng-template>
+    <app-create-announcements-modal
+      *ngIf="showModal"
+      (close)="closeModal()"
+      (submitAnnouncement)="handleAnnoucementSubmission($event)" 
+    ></app-create-announcements-modal>
+  </ul>
+</div>

@@ -1,0 +1,40 @@
+<nav *ngIf="isAdmin; else basicUser"class="navbar">
+  <div class="logo-container">
+    <div class="svg-container">
+      <img src="assets/logo.svg" class="inner-svg" />
+    </div>
+    <span class="user-type">ACTING AS ADMIN</span>
+  </div>
+  <ul class="nav-links" [class.active]="isMenuOpen">
+    <li><a  routerLink="/home" (click)="closeMenu()">Home</a></li>
+    <li><a  routerLink="/select-company" (click)="closeMenu()">Company</a></li>
+    <li><a  routerLink="/teams" (click)="closeMenu()">Teams</a></li>
+    <li><a  routerLink="/users-registry" (click)="closeMenu()">Users</a></li>
+    <li><a routerLink="/log-out" (click)="logout()">Logout</a></li>
+  </ul>
+  <div class="hamburger" (click)="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</nav>
+<ng-template #basicUser>
+  <nav class="navbar">
+    <div class="logo-container">
+      <div class="svg-container">
+        <img src="assets/logo.svg" class="inner-svg" />
+      </div>
+      <span class="user-type">ACTING AS BASIC USER</span>
+    </div>
+    <ul class="nav-links" [class.active]="isMenuOpen">
+      <li><a  routerLink="/home" (click)="closeMenu()">Home</a></li>
+      <li><a  routerLink="/teams" (click)="closeMenu()">Teams</a></li>
+      <li><a routerLink="/log-out" (click)="logout()">Logout</a></li>
+    </ul>
+    <div class="hamburger" (click)="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </nav>
+</ng-template>

@@ -1,0 +1,20 @@
+<div class="modal-backdrop">
+    <div class="modal">
+      <div class="modal-header">
+        <button class="close-button" (click)="closeModal()">&times;</button>
+      </div>
+  
+      <div class="modal-body">
+        <label for="name">Project Name</label>
+        <input type="text" [(ngModel)]="name" />
+  
+        <label for="description">Description</label>
+        <textarea [(ngModel)]="description"></textarea>
+  
+        <button class="submit-button" [disabled]="!name || !description" (click)="submitProject()">
+          Create Project 
+        </button>
+        
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,23 @@
+<div class="project-container" *ngFor="let project of allProjects; let i = index">
+  <div class="project-header">
+    <h2>{{project.name}}</h2>
+    <span class="project-last-edited-date" [ngStyle]="{ 'color': getColor(project.active) }">
+      {{ activeOrInactive(project.active) }}
+    </span>
+  </div>
+  <div class="project-message-and-btn">
+    <p class="project-message">
+      {{project.description}}  
+    </p>
+    <div>
+      <button class="edit-project-btn" (click)="openModal('update', project)">Edit</button>
+    </div>
+  </div>
+  <app-update-project-modal 
+  (updatedProjectSubmitted)="updatedProjectSubmitted($event, project)" 
+  [updateName]="name" 
+  [updateDescription]="description" 
+  *ngIf="showModal && modalType === 'update'" 
+  (close)="closeModal(project)">
+</app-update-project-modal>
+</div>  

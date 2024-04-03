@@ -1,0 +1,121 @@
+.project-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 70vw;
+  padding: 2rem;
+  margin-top: -100px;
+}
+
+.header {
+  /* display: flex; */
+  justify-content: center;
+  width: 100%;
+  margin: 2rem 0; 
+  padding-bottom: 1rem;
+}
+
+.title {
+  padding-right: 1rem;
+  margin: 0 auto;
+  text-align: center;
+  margin-left: 1px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--accentOne);
+  margin: 0;
+}
+
+.new-project-btn {
+  background-color: var(--accentOne);
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  color: white;
+  cursor: pointer;
+  font-size: 1.25rem;
+  min-width: 100px;
+  max-width: 200px;
+  white-space: nowrap;
+  margin-left: auto;
+  margin-bottom: 20px;
+  margin-right: 65px;
+}
+
+.project-list {
+  width: 90%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+.project-item {
+
+  margin-top: 0px;
+  padding: 0px;
+  border-radius: 8px;
+  width: 100%; 
+}
+
+/* TODO Need to put into MEDIA. I dont know where */
+.back {
+  display: flex;
+  justify-content: start;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+/* TODO Need to put into MEDIA. I dont know where */
+a{
+  font-size: 2.5rem;
+  color: var(--accentOne);
+  margin: 0;
+  text-decoration-line: none;
+}
+
+/* Media queries for tablet screens */
+@media (max-width: 768px) {
+  .header {
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+  }
+
+  .title h1 {
+    font-size: 2rem;
+  }
+
+  .new-project-btn {
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+    min-width: 90px;
+  }
+}
+
+/* Media queries for mobile screens */
+@media (max-width: 480px) {
+  .project-container {
+    padding: 1rem;
+  }
+
+  .header,
+  .project-list {
+    padding: 1rem 1rem;
+  }
+
+  .new-project-btn {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+    min-width: 80px;
+  }
+
+  .project-item {
+    padding: 1rem 1.5rem;
+    width: 100%;
+  }
+
+}

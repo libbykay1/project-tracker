@@ -1,0 +1,86 @@
+
+.edit-project-btn {
+  background-color: var(--accentTwo);
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  color: black;
+  cursor: pointer;
+  font-size: 1.25em;
+  min-width: 100px;
+  max-width: 200px;
+  white-space: nowrap;
+}
+
+span{
+  margin-left: 50px;
+  /* margin-top: 2px; */
+}
+
+.project-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  font-size: 1.25rem;
+  border-top: 1px solid var(--accentTwo);
+}
+
+.project-header h2 {
+  font-size: 2.5  rem;
+  margin-top: 20px;
+}
+
+.project-date {
+  font-size: 1rem;
+}
+
+.project-message {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+}
+
+/* Media queries for tablet screens */
+@media (max-width: 768px) {
+
+  .edit-project-btn {
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+    min-width: 90px;
+  }
+  .project-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .project-date {
+    font-size: 0.875rem;
+  }
+
+  .project-message {
+    font-size: 1rem;
+  }
+}
+
+/* Media queries for mobile screens */
+@media (max-width: 480px) {
+
+  .edit-project-btn {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+    min-width: 80px;
+  }
+
+  .project-header h2,
+  .project-message {
+    font-size: 1rem;
+  }
+
+}
+
+  .project-message-and-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 20px;
+  }
